@@ -1,14 +1,27 @@
 {
   "name": "web-logging",
-  "version": "0.0.1",
-  "description": "web logging",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "version": "0.0.2",
+  "description": "web-logging 日志记录",
+  "private": false,
+  "main": "lib/logging.js",
   "keywords": [
-    "javascript","logging","web"
+    "JavaScript",
+    "indexeddb",
+    "web",
+    "js",
+    "logging"
   ],
+  "scripts": {
+    "build": "webpack"
+  },
   "author": "pisenliang <pisenliang@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^4.34.0",
+    "webpack-cli": "^3.3.4"
+  },
+  "dependencies": {
+    "lodash": "^4.17.14",
+    "set-value": "^3.0.1"
+  }
 }

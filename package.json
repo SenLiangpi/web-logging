@@ -1,5 +1,5 @@
 {
-  "name": "web-logging",
+  "name": "web-logging0",
   "version": "0.0.1",
   "description": "web logging",
   "author": "pisenliang <pisenliang@gmail.com>",
@@ -7,11 +7,14 @@
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "logging": "webpack --config build/web.logging.config.js"
   },
   "dependencies": {
+    "amx-indexeddb": "0.0.7",
     "vue": "^2.5.2",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "web-logging": "0.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
