@@ -5,7 +5,7 @@
  * @Website: https://senliangpi.github.io/blog/#/
  * @Date: 2020-04-20 10:21:32
  * @LastEditors: PiPi
- * @LastEditTime: 2020-05-22 15:35:14
+ * @LastEditTime: 2020-06-23 16:14:04
  */
 import dataDB from './indexedDB/dataDB'
 
@@ -19,13 +19,14 @@ webLogging.allLength().then((result) => {
   console.log(err)
 });
 // 1000*60*60*24*30
-let aaa = new Date().getTime()
-webLogging.readAll(IDBKeyRange.upperBound(1000*60*60*24*30)).then((result) => {
-  let bbb = new Date().getTime()
-  console.log(bbb-aaa)
+// let aaa = new Date().getTime()
+webLogging.readAll(IDBKeyRange.upperBound(new Date().getTime()-(1000*60*60*24*30))).then((result) => {
+  // let bbb = new Date().getTime()
+  // console.log(bbb-aaa)
+  console.log(result)
   for(let a in result){
     webLogging.remove(result[a].key).then((result) => {
-      console.log(new Date().getTime()-bbb)
+      // console.log(new Date().getTime()-bbb)
       console.log('delete ok')
     }).catch((err) => {
       console.log(err)

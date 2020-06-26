@@ -5,7 +5,7 @@
  * @Website: https://senliangpi.github.io/blog/#/
  * @Date: 2020-05-20 09:46:48
  * @LastEditors: PiPi
- * @LastEditTime: 2020-05-22 11:11:09
+ * @LastEditTime: 2020-06-23 16:09:41
 --> 
 <template>
   <div id="app">
@@ -19,9 +19,9 @@ import {webLoggingWrite} from './web-logging/src/index'
 export default {
   name: 'App',
   created(){
-    // setInterval(()=>{
-    //   webLogging({logName:'业务逻辑',location:'App.vue',logo: 'Appcreated',remarks: '外部引入方法'})
-    // },10)
+    setInterval(()=>{
+      webLoggingWrite({logName:'业务逻辑',location:'App.vue',logo: 'Appcreated',remarks: '外部引入方法'})
+    },10000)
   }
 }
 </script>
