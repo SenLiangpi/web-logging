@@ -4,8 +4,8 @@
  * @Github: https://github.com/SenLiangpi
  * @Website: https://senliangpi.github.io/blog/#/
  * @Date: 2020-04-20 10:21:32
- * @LastEditors: PiPi
- * @LastEditTime: 2020-06-23 16:14:04
+ * @LastEditors: Pi Patle
+ * @LastEditTime: 2020-08-26 14:55:13
  */
 import dataDB from './indexedDB/dataDB'
 
@@ -13,17 +13,17 @@ dataDB.install('',{v: 1,name: 'd2ViTG9nZ2luZwog',dbData: { webLogging: '' }})
 
 let webLogging = new dataDB.db('webLogging')
 
-webLogging.allLength().then((result) => {
-  console.log(result)
-}).catch((err) => {
-  console.log(err)
-});
+// webLogging.allLength().then((result) => {
+//   console.log(result)
+// }).catch((err) => {
+//   console.log(err)
+// });
 // 1000*60*60*24*30
 // let aaa = new Date().getTime()
 webLogging.readAll(IDBKeyRange.upperBound(new Date().getTime()-(1000*60*60*24*30))).then((result) => {
   // let bbb = new Date().getTime()
   // console.log(bbb-aaa)
-  console.log(result)
+  // console.log(result)
   for(let a in result){
     webLogging.remove(result[a].key).then((result) => {
       // console.log(new Date().getTime()-bbb)

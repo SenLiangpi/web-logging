@@ -4,8 +4,8 @@
  * @Github: https://github.com/SenLiangpi
  * @Website: https://senliangpi.github.io/blog/#/
  * @Date: 2020-05-22 09:43:19
- * @LastEditors: PiPi
- * @LastEditTime: 2020-05-22 14:09:38
+ * @LastEditors: Pi Patle
+ * @LastEditTime: 2020-08-26 17:54:02
  */ 
 // import amx from 'vue-amx/1x/index'
 import amxIndexedDB from './index'
@@ -74,7 +74,7 @@ dataDB.install = (Vue, store)=>{
 dataDB.db = class {
   constructor(name){//初始化参数
     this.name = name
-    this.millisecond = 2
+    this.millisecond = 15
   }
   add(json){//添加
     return new Promise((resolve, reject)=>{
@@ -87,7 +87,7 @@ dataDB.db = class {
             reject(err)
             clearTimeout(amxDBRead)
           }else{
-            console.error(err)
+            // console.error(err)
           }
         })
       },this.millisecond)
@@ -105,7 +105,7 @@ dataDB.db = class {
             reject(err)
             clearTimeout(amxDBRead)
           }else{
-            console.error(err)
+            // console.error(err)
           }
         })
       },this.millisecond)
@@ -122,7 +122,7 @@ dataDB.db = class {
             reject(err)
             clearTimeout(amxDBRead)
           }else{
-            console.error(err)
+            // console.error(err)
           }
         })
       },this.millisecond)
@@ -139,7 +139,7 @@ dataDB.db = class {
             reject(err)
             clearTimeout(amxDBRead)
           }else{
-            console.error(err)
+            // console.error(err)
           }
         })
       },this.millisecond)
@@ -156,7 +156,7 @@ dataDB.db = class {
             reject(err)
             clearTimeout(amxDBRead)
           }else{
-            console.error(err)
+            // console.error(err)
           }
         })
       },this.millisecond)
@@ -173,7 +173,7 @@ dataDB.db = class {
             reject(err)
             clearTimeout(amxDBRead)
           }else{
-            console.error(err)
+            // console.error(err)
           }
         })
       },this.millisecond)
