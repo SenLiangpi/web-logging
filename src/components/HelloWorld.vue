@@ -4,11 +4,11 @@
  * @Github: https://github.com/SenLiangpi
  * @Website: https://senliangpi.github.io/blog/#/
  * @Date: 2020-05-20 09:46:48
- * @LastEditors: PiPi
- * @LastEditTime: 2020-05-22 15:35:31
+ * @LastEditors: Pi Patle
+ * @LastEditTime: 2020-09-02 20:19:21
 --> 
 <template>
-  <div class="hello">
+  <div class="hello" v-if="true">
     <input v-model="startTime" type="text" style="width: 40vw">
     <input v-model="endTime" type="text" style="width: 40vw">
     <button @click="ok()" name="button" style="width: 10vw;">ok</button>
@@ -34,7 +34,10 @@ export default {
       this.loggingList()
     },
     loggingList(){
+      let aaa = new Date().getTime()
       webLoggingList(this.startTime,this.endTime).then((result) => {
+        console.log(result.length)
+        console.log(new Date().getTime()-aaa)
         this.logList = result
       }).catch((err) => {
         console.log(err)
@@ -42,13 +45,13 @@ export default {
     },
     timeFormat(a){
       let myDate = new Date(a);
-      return `${myDate.getFullYear()}-${(((myDate.getMonth()*1)+1)>=10 ? '' : '0') + ((myDate.getMonth()*1)+1)}-${((myDate.getDate()*1)>=10 ? '' : '0') + myDate.getDate()} ${((myDate.getHours()*1)>=10 ? '' : '0') + myDate.getHours()}:${((myDate.getMinutes()*1)>=10 ? '' : '0') + myDate.getMinutes()}:${((myDate.getSeconds()*1)>=10 ? '' : '0') + myDate.getSeconds()}`
+      return `${myDate.getFullYear()}/${(((myDate.getMonth()*1)+1)>=10 ? '' : '0') + ((myDate.getMonth()*1)+1)}/${((myDate.getDate()*1)>=10 ? '' : '0') + myDate.getDate()} ${((myDate.getHours()*1)>=10 ? '' : '0') + myDate.getHours()}:${((myDate.getMinutes()*1)>=10 ? '' : '0') + myDate.getMinutes()}:${((myDate.getSeconds()*1)>=10 ? '' : '0') + myDate.getSeconds()}`
     }
   },
   created(){
     let time = new Date().getTime();
     this.endTime = this.timeFormat(time);
-    this.startTime = this.timeFormat(time-(1000*60*60));
+    this.startTime = this.timeFormat(time-(1000*60*60*24));
     this.loggingList()
   }
 }

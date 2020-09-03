@@ -4,8 +4,8 @@
  * @Github: https://github.com/SenLiangpi
  * @Website: https://senliangpi.github.io/blog/#/
  * @Date: 2019-12-16 14:42:27
- * @LastEditors: PiPi
- * @LastEditTime: 2020-05-22 14:09:21
+ * @LastEditors: Pi Patle
+ * @LastEditTime: 2020-09-02 16:55:12
  */
 
 export default class amxIndexedDB {
@@ -38,7 +38,6 @@ export default class amxIndexedDB {
             }
           }
         }
-        resolve(true)
       }
     })
   }

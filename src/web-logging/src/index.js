@@ -5,36 +5,34 @@
  * @Website: https://senliangpi.github.io/blog/#/
  * @Date: 2020-04-20 10:21:32
  * @LastEditors: Pi Patle
- * @LastEditTime: 2020-08-26 14:55:13
+ * @LastEditTime: 2020-09-03 09:48:31
  */
 import dataDB from './indexedDB/dataDB'
 
 dataDB.install('',{v: 1,name: 'd2ViTG9nZ2luZwog',dbData: { webLogging: '' }})
 
 let webLogging = new dataDB.db('webLogging')
-
+//获取总数据 条数
 // webLogging.allLength().then((result) => {
 //   console.log(result)
 // }).catch((err) => {
 //   console.log(err)
 // });
-// 1000*60*60*24*30
-// let aaa = new Date().getTime()
-webLogging.readAll(IDBKeyRange.upperBound(new Date().getTime()-(1000*60*60*24*30))).then((result) => {
-  // let bbb = new Date().getTime()
-  // console.log(bbb-aaa)
-  // console.log(result)
-  for(let a in result){
-    webLogging.remove(result[a].key).then((result) => {
-      // console.log(new Date().getTime()-bbb)
-      console.log('delete ok')
-    }).catch((err) => {
-      console.log(err)
-    });
+webLogging.readAll(IDBKeyRange.upperBound(new Date().getTime()-(1000*60*60*24*30)),(result) => {
+  if(result.code){
+    for(let a in result.result){
+      webLogging.remove(result.result[a].key,(result) => {
+        if(result.code){
+          console.log('delete')
+        }else{
+          console.log(result.result)
+        }
+      })
+    }
+  }else{
+    console.log(result.result)
   }
-}).catch((err) => {
-  console.log(err)
-});
+})
 export function webLoggingWrite(json){
   /**
    * { 
@@ -45,11 +43,13 @@ export function webLoggingWrite(json){
    * remarks: '备注'
    * }
    */
-  webLogging.update({key:new Date().getTime(),value:json }).then((result) => {
-    console.log('ok')
-  }).catch((err) => {
-    console.log(err)
-  });
+  webLogging.add({key:new Date().getTime(),value:json },(result) => {
+    if(result.code){
+      console.log('ok')
+    }else{
+      console.log(result.result)
+    }
+  })
 }
 
 export function webLoggingList(startTime,endTime){
@@ -62,10 +62,12 @@ export function webLoggingList(startTime,endTime){
     }else if(endTime){
       condition = IDBKeyRange.upperBound(new Date(endTime).getTime());
     }
-    webLogging.readAll(condition).then((result) => {
-      resolve(result)
-    }).catch((err) => {
-      reject(err)
-    });
+    webLogging.readAll(condition,(result) => {
+      if(result.code){
+        resolve(result.result)
+      }else{
+        reject(result.result)
+      }
+    })
   })
 }
