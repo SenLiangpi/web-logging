@@ -5,7 +5,7 @@
  * @Website: https://senliangpi.github.io/blog/#/
  * @Date: 2020-04-20 10:21:32
  * @LastEditors: Pi Patle
- * @LastEditTime: 2020-09-03 09:48:31
+ * @LastEditTime: 2020-09-09 18:02:21
  */
 import dataDB from './indexedDB/dataDB'
 
@@ -43,13 +43,25 @@ export function webLoggingWrite(json){
    * remarks: '备注'
    * }
    */
-  webLogging.add({key:new Date().getTime(),value:json },(result) => {
-    if(result.code){
-      console.log('ok')
-    }else{
-      console.log(result.result)
-    }
-  })
+  let a = 0;
+  let push = ()=>{
+    webLogging.add({key:new Date().getTime(),value:json },(result) => {
+      if(result.code){
+        console.log('ok')
+      }else{
+        // console.log(result.result.target.error.message)
+        // console.log(a)
+        var random = parseInt(Math.random() * 10)+1;
+        if(a<10){
+          a++;
+          setTimeout(()=>{
+            push()
+          },random)
+        }
+      }
+    })
+  }
+  push()
 }
 
 export function webLoggingList(startTime,endTime){
