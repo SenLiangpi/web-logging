@@ -5,7 +5,7 @@
  * @Website: https://senliangpi.github.io/blog/#/
  * @Date: 2020-04-20 10:21:32
  * @LastEditors: Pi Patle
- * @LastEditTime: 2020-09-09 18:02:21
+ * @LastEditTime: 2020-09-09 19:45:55
  */
 import dataDB from './indexedDB/dataDB'
 
@@ -52,7 +52,7 @@ export function webLoggingWrite(json){
         // console.log(result.result.target.error.message)
         // console.log(a)
         var random = parseInt(Math.random() * 10)+1;
-        if(a<10){
+        if(a<5){
           a++;
           setTimeout(()=>{
             push()
