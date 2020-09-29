@@ -5,7 +5,7 @@
  * @Website: https://senliangpi.github.io/blog/#/
  * @Date: 2020-05-20 09:46:48
  * @LastEditors: Pi Patle
- * @LastEditTime: 2020-09-02 20:19:21
+ * @LastEditTime: 2020-09-24 11:17:50
 --> 
 <template>
   <div class="hello" v-if="true">
@@ -50,8 +50,8 @@ export default {
   },
   created(){
     let time = new Date().getTime();
-    this.endTime = this.timeFormat(time);
-    this.startTime = this.timeFormat(time-(1000*60*60*24));
+    this.endTime = this.timeFormat(time+1000*60*60);
+    this.startTime = this.timeFormat(time-(1000*60*60));
     this.loggingList()
   }
 }
