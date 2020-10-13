@@ -5,7 +5,7 @@
  * @Website: https://senliangpi.github.io/blog/#/
  * @Date: 2020-05-20 09:46:48
  * @LastEditors: Pi Patle
- * @LastEditTime: 2020-09-30 16:13:09
+ * @LastEditTime: 2020-10-13 15:19:55
 --> 
 <template>
   <div class="hello" v-if="true">
@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import {webLoggingList} from '../web-logging/src/index'
+import {webLoggingWrite,webLoggingList} from '../web-logging/src/index'
 export default {
   name: 'HelloWorld',
   data () {
@@ -54,6 +54,9 @@ export default {
     this.endTime = this.timeFormat(time+1000*60*60);
     this.startTime = this.timeFormat(time-(1000*60*60));
     this.loggingList()
+    webLoggingWrite({logName:'接口',location:'App.vue',logo: 'Appcreated',remarks: '外部引入方法'})
+    webLoggingWrite({logName:'Appcreated',location:'App.vue',logo: 'Appcreated',remarks: '外部引入方法'})
+    webLoggingWrite({logName:'qqq',location:'App.vue',logo: 'Appcreated',remarks: '外部引入方法'})
   }
 }
 </script>
