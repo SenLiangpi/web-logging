@@ -5,7 +5,7 @@
  * @Website: https://senliangpi.github.io/blog/#/
  * @Date: 2020-04-20 10:21:32
  * @LastEditors: Pi Patle
- * @LastEditTime: 2020-10-13 16:34:34
+ * @LastEditTime: 2020-10-13 16:59:10
  */
 import dataDB from 'amx-indexeddb'
 function timeFormat(a){
@@ -261,7 +261,7 @@ function initialization(){
       font-size: 12px;
       background-color: rgba(0,0,0,0);" />
       <select name="pets" id="webLogging_logName_select" style="
-      width: calc( 35vw + 10px );
+      width: 35vw;
       outline: none;
       color: #fff;
       border: 1px solid transparent;
@@ -329,16 +329,14 @@ function initialization(){
         }else{
           document.getElementById('${id}').style.display = 'none';
         }">
-        ${result[a].key} : [${timeFormat(result[a].key)}] [${result[a].value.logName}] [${result[a].value.location}] [${result[a].value.logo}] : ${result[a].value.remarks}
+        [${timeFormat(result[a].key)}] : [${result[a].value.logName}] [${result[a].value.location}] : ${result[a].value.remarks}
         </p>
         <div id="${id}" style="border-top: 1px solid transparent;
         border-image: linear-gradient(to left,#ff8a00,#e52e71);
         border-image-slice: 10;line-height: 18px;padding: 5px 10px;display: none;">
-          <p style="margin: 0;">id:${result[a].key}</p>
           <p style="margin: 0;">time:${timeFormat(result[a].key)}</p>
           <p style="margin: 0;">logName:${result[a].value.logName}</p>
           <p style="margin: 0;">location:${result[a].value.location}</p>
-          <p style="margin: 0;">logo:${result[a].value.logo}</p>
           <p style="margin: 0;">remarks:${result[a].value.remarks}</p>
         </div>
         </div></div>`

@@ -1,6 +1,6 @@
 {
   "name": "web-logging",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "web-logging 日志记录",
   "private": false,
   "main": "lib/logging.js",

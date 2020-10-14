@@ -4,7 +4,7 @@
  * @Email: pisenliang@gmail.com
  * @Date: 2019-06-17 15:38:23
  * @LastEditors: Pi Patle
- * @LastEditTime: 2020-10-10 15:39:27
+ * @LastEditTime: 2020-10-13 16:56:42
  -->
 # web-logging 日志记录
 web-logging是一个纯JavaScript编写的 前端日志管理。主要是为了解决现在使用webpack打包后的项目导致的 错误信息不易追踪的问题。web-logging日志存储为近30天的记录。本庫依賴 amx-indexeddb。
@@ -32,12 +32,10 @@ webLoggingWrite(json)
 /**
    * { 
    * logName: '用于标识日志，例如请求日志、标准错误、标准输出等。',
-   * location: '记录日志 的位置',
-   * logo: '标识符',
    * remarks: '备注'
    * }
    */
-  webLoggingWrite({logName:'业务逻辑',location:'App.vue',logo: 'Appcreated',remarks: '外部引入方法'})
+  webLoggingWrite({logName:'业务逻辑',remarks: '外部引入方法'})
 ```
 webLoggingList(startDate,endDate)
 ```javascript
