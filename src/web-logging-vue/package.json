@@ -1,15 +1,17 @@
 {
-  "name": "web-logging",
-  "version": "0.1.7",
-  "description": "web-logging 日志记录",
+  "name": "web-logging-vue",
+  "version": "0.0.1",
+  "description": "web-logging 日志记录 Vue 版本",
   "private": false,
   "main": "lib/logging.js",
   "keywords": [
+    "web-logging-vue",
     "JavaScript",
     "indexeddb",
     "web",
     "js",
-    "logging"
+    "logging",
+    "vue"
   ],
   "scripts": {
     "build": "webpack"

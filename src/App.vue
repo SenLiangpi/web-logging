@@ -5,7 +5,7 @@
  * @Website: https://senliangpi.github.io/blog/#/
  * @Date: 2020-05-20 09:46:48
  * @LastEditors: Pi Patle
- * @LastEditTime: 2020-10-13 11:40:12
+ * @LastEditTime: 2020-10-20 10:30:07
 --> 
 <template>
   <div id="app">
@@ -15,17 +15,20 @@
 </template>
 
 <script>
-import {webLoggingWrite,webLoggingIn} from './web-logging/src/index'
-webLoggingIn(true)
+import web_logging_vue from './web-logging-vue/src/index'
+// bb()
+// webLoggingIn(true)
 export default {
   name: 'App',
   created(){
+    console.log('aaa')
     // setTimeout
     // setInterval(()=>{
-    //   webLoggingWrite({logName:'业务逻辑',location:'App.vue',logo: 'Appcreated',remarks: '外部引入方法'})
+      web_logging_vue.webLoggingWrite({logName:'web-logging-vue',location:'App.vue',logo: 'Appcreated',remarks: '外部引入方法'})
     // },1)
     // for(let a = 0;a<10000;a++){
-      webLoggingWrite({logName:'业务逻辑',location:'App.vue',logo: 'Appcreated',remarks: '外部引入方法'})
+      // webLoggingWrite({logName:'业务逻辑',location:'App.vue',logo: 'Appcreated',remarks: '外部引入方法'})
+      aa()
     // }
   }
 }

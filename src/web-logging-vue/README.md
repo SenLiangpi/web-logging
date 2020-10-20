@@ -4,9 +4,10 @@
  * @Email: pisenliang@gmail.com
  * @Date: 2019-06-17 15:38:23
  * @LastEditors: Pi Patle
- * @LastEditTime: 2020-10-13 16:56:42
+ * @LastEditTime: 2020-10-20 10:41:32
  -->
 # web-logging 日志记录
+web-logging-vue 是vue版本的 web-logging。
 web-logging是一个纯JavaScript编写的 前端日志管理，用於檢測前端的日志系統。web-logging日志存储为近15天的记录。本庫依賴 amx-indexeddb。
 
 支持Amx技术：
@@ -15,18 +16,21 @@ web-logging是一个纯JavaScript编写的 前端日志管理，用於檢測前�
 github : https://github.com/SenLiangpi/web-logging
 
 # 用法
-安装 npm i web-logging
-在所需点引入 web-logging
+安装 npm i web-logging-amx
+在main点引入 web-logging-amx
 ```javascript
-  //web-logging 供三个方法 webLoggingIn 初始化 webLoggingWrite 写入 webLoggingList读出
-  import { webLoggingIn, webLoggingWrite, webLoggingList } from 'web-logging'
+  import web_logging_vue from 'web-logging-vue'
+  //傳入參數 true 或 false ，true為允許 將渲染dom false 為不允許 將不會渲染
+  Vue.use(web_logging_vue,true)
+
+  //在需要logging日志記錄點引入
+  import web_logging_vue from 'web-logging-vue'
+  //記錄日志
+  web_logging_vue.webLoggingWrite(json)
+  //日志記錄輸出
+  web_logging_vue.webLoggingList(startDate,endDate)
 ```
 # API
-webLoggingIn(Boolean)
-```javascript
-  //webLogging會在body中創建dom 以提供 logging 日志記錄的查看 ，傳入參數 true 或 false ，true為允許 將渲染dom false 為不允許 將不會渲染
-  webLoggingIn(Boolean)
-```
 webLoggingWrite(json)
 ```javascript
 /**

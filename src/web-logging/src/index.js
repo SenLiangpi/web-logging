@@ -5,7 +5,7 @@
  * @Website: https://senliangpi.github.io/blog/#/
  * @Date: 2020-04-20 10:21:32
  * @LastEditors: Pi Patle
- * @LastEditTime: 2020-10-13 16:59:10
+ * @LastEditTime: 2020-10-20 10:28:39
  */
 import dataDB from 'amx-indexeddb'
 function timeFormat(a){
@@ -224,6 +224,15 @@ export function webLoggingIn(type){
     initialization()
   }
 }
+window.onerror = function(message, source, lineno, colno, error) {
+  webLoggingWrite({logName:'ReferenceError',remarks: error})
+  // console.log(message)
+  // console.log(source)
+  // console.log(lineno)
+  // console.log(colno)
+  console.error(err);
+}
+// aa();
 function initialization(){
   let bodyDom = document.getElementsByTagName("body")[0],
   devDom = document.createElement('dev');
@@ -235,7 +244,8 @@ function initialization(){
     <div style="position: fixed;bottom: 5vw;left: 0;padding: 10px 15px;border-radius: 0 50px 50px 0;cursor: pointer;color: #fff;
     z-index: 9999;background-image: linear-gradient(90deg,#e52e71,#ff8a00);opacity: 0.8;"
     onclick="web_logging.loggingButton()">logging</div>
-    <div id="web_logging_list" style="display: none;width: 100vw;position: fixed;top: 0;background-color: rgba(16, 14, 23, 0.8);height: 100vh; overflow: auto;">
+    <div id="web_logging_list" style="display: none;width: 100vw;position: fixed;top: 0;z-index: 9998;
+    background-color: rgba(16, 14, 23, 0.8);height: 100vh; overflow: auto;">
       <input id="input_1" type="text" style="width: 35vw;
       outline: none;
       color: #fff;
