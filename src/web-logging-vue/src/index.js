@@ -5,7 +5,7 @@
  * @Website: https://senliangpi.github.io/blog/#/
  * @Date: 2020-10-20 09:28:25
  * @LastEditors: Pi Patle
- * @LastEditTime: 2020-10-20 10:21:25
+ * @LastEditTime: 2020-10-28 10:12:59
  */
 import { webLoggingWrite, webLoggingList, webLoggingIn } from '../../web-logging/src/index'
 
@@ -18,6 +18,8 @@ webLoggingVue.install = (Vue,type)=>{
     console.log(info);
   }
   webLoggingIn(type)
+  Vue.prototype.$webLoggingWrite = webLoggingWrite;
+  Vue.prototype.$webLoggingList = webLoggingList;
 }
 webLoggingVue.webLoggingWrite = webLoggingWrite;
 webLoggingVue.webLoggingList = webLoggingList;

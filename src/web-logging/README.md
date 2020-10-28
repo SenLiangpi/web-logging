@@ -4,7 +4,7 @@
  * @Email: pisenliang@gmail.com
  * @Date: 2019-06-17 15:38:23
  * @LastEditors: Pi Patle
- * @LastEditTime: 2020-10-13 16:56:42
+ * @LastEditTime: 2020-10-28 10:09:12
  -->
 # web-logging 日志记录
 web-logging是一个纯JavaScript编写的 前端日志管理，用於檢測前端的日志系統。web-logging日志存储为近15天的记录。本庫依賴 amx-indexeddb。
@@ -47,4 +47,4 @@ webLoggingList(startDate,endDate)
     console.log(err)
   });
 ```
-皮皮研究所出品
+皮皮研究所製作

@@ -4,7 +4,7 @@
  * @Email: pisenliang@gmail.com
  * @Date: 2019-06-17 15:38:23
  * @LastEditors: Pi Patle
- * @LastEditTime: 2020-10-20 10:41:32
+ * @LastEditTime: 2020-10-28 10:09:05
  -->
 # web-logging 日志记录
 web-logging-vue 是vue版本的 web-logging。
@@ -51,4 +51,4 @@ webLoggingList(startDate,endDate)
     console.log(err)
   });
 ```
-皮皮研究所出品
+皮皮研究所製作
