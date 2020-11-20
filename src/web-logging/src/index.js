@@ -5,87 +5,87 @@
  * @Website: https://senliangpi.github.io/blog/#/
  * @Date: 2020-04-20 10:21:32
  * @LastEditors: Pi Patle
- * @LastEditTime: 2020-10-20 10:28:39
+ * @LastEditTime: 2020-11-03 17:47:46
  */
 import dataDB from 'amx-indexeddb'
 function timeFormat(a){
   let myDate = new Date(a);
   return `${myDate.getFullYear()}/${(((myDate.getMonth()*1)+1)>=10 ? '' : '0') + ((myDate.getMonth()*1)+1)}/${((myDate.getDate()*1)>=10 ? '' : '0') + myDate.getDate()} ${((myDate.getHours()*1)>=10 ? '' : '0') + myDate.getHours()}:${((myDate.getMinutes()*1)>=10 ? '' : '0') + myDate.getMinutes()}:${((myDate.getSeconds()*1)>=10 ? '' : '0') + myDate.getSeconds()}`
 }
-function happy(){
-  var click_cnt = 0;
-  var $html = document.getElementsByTagName("html")[0];
-  var $body = document.getElementsByTagName("body")[0];
-  $html.onclick = function(e) {
-      var $elem = document.createElement("b");
-      $elem.style.color = "#e91e63";
-      $elem.style.zIndex = 9999;
-      $elem.style.position = "fixed";
-      $elem.style.select = "none";
-      var x = e.pageX;
-      var y = e.pageY;
-      $elem.style.left = (x - 10) + "px";
-      $elem.style.top = (y - 20) + "px";
-      clearInterval(anim);
-      switch (++click_cnt) {
-          case 10:
-              $elem.innerText = "OωO";
-              break;
-          case 20:
-              $elem.innerText = "(๑•́ ∀ •̀๑)";
-              break;
-          case 30:
-              $elem.innerText = "(๑•́ ₃ •̀๑)";
-              break;
-          case 40:
-              $elem.innerText = "(๑•̀_•́๑)";
-              break;
-          case 50:
-              $elem.innerText = "（￣へ￣）";
-              break;
-          case 60:
-              $elem.innerText = "(╯°口°)╯(┴—┴";
-              break;
-          case 70:
-              $elem.innerText = "૮( ᵒ̌皿ᵒ̌ )ა";
-              break;
-          case 80:
-              $elem.innerText = "╮(｡>口<｡)╭";
-              break;
-          case 90:
-              $elem.innerText = "( ง ᵒ̌皿ᵒ̌)ง⁼³₌₃";
-              break;
-          case 100:
-          case 101:
-          case 102:
-          case 103:
-          case 104:
-          case 105:
-              $elem.innerText = "(ꐦ°᷄д°᷅)";
-              break;
-          default:
-              // $elem.innerText = "❤";
-              $elem.innerText = "(●'◡'●)";
-              break;
-      }
-      $elem.style.fontSize = Math.random() * 10 + 8 + "px";
-      $elem.style.width = '240px';
-      $elem.style.pointerEvents = "none";
-      var increase = 0;
-      var anim;
-      setTimeout(function() {
-          anim = setInterval(function() {
-              if (++increase == 150) {
-                  clearInterval(anim);
-                  $body.removeChild($elem);
-              }
-              $elem.style.top = y - 20 - increase + "px";
-              $elem.style.opacity = (150 - increase) / 120;
-          }, 10);
-      }, 70);
-      $body.appendChild($elem);
-  };
-};
+// function happy(){
+//   var click_cnt = 0;
+//   var $html = document.getElementsByTagName("html")[0];
+//   var $body = document.getElementsByTagName("body")[0];
+//   $html.onclick = function(e) {
+//       var $elem = document.createElement("b");
+//       $elem.style.color = "#e91e63";
+//       $elem.style.zIndex = 9999;
+//       $elem.style.position = "fixed";
+//       $elem.style.select = "none";
+//       var x = e.pageX;
+//       var y = e.pageY;
+//       $elem.style.left = (x - 10) + "px";
+//       $elem.style.top = (y - 20) + "px";
+//       clearInterval(anim);
+//       switch (++click_cnt) {
+//           case 10:
+//               $elem.innerText = "OωO";
+//               break;
+//           case 20:
+//               $elem.innerText = "(๑•́ ∀ •̀๑)";
+//               break;
+//           case 30:
+//               $elem.innerText = "(๑•́ ₃ •̀๑)";
+//               break;
+//           case 40:
+//               $elem.innerText = "(๑•̀_•́๑)";
+//               break;
+//           case 50:
+//               $elem.innerText = "（￣へ￣）";
+//               break;
+//           case 60:
+//               $elem.innerText = "(╯°口°)╯(┴—┴";
+//               break;
+//           case 70:
+//               $elem.innerText = "૮( ᵒ̌皿ᵒ̌ )ა";
+//               break;
+//           case 80:
+//               $elem.innerText = "╮(｡>口<｡)╭";
+//               break;
+//           case 90:
+//               $elem.innerText = "( ง ᵒ̌皿ᵒ̌)ง⁼³₌₃";
+//               break;
+//           case 100:
+//           case 101:
+//           case 102:
+//           case 103:
+//           case 104:
+//           case 105:
+//               $elem.innerText = "(ꐦ°᷄д°᷅)";
+//               break;
+//           default:
+//               // $elem.innerText = "❤";
+//               $elem.innerText = "(●'◡'●)";
+//               break;
+//       }
+//       $elem.style.fontSize = Math.random() * 10 + 8 + "px";
+//       $elem.style.width = '240px';
+//       $elem.style.pointerEvents = "none";
+//       var increase = 0;
+//       var anim;
+//       setTimeout(function() {
+//           anim = setInterval(function() {
+//               if (++increase == 150) {
+//                   clearInterval(anim);
+//                   $body.removeChild($elem);
+//               }
+//               $elem.style.top = y - 20 - increase + "px";
+//               $elem.style.opacity = (150 - increase) / 120;
+//           }, 10);
+//       }, 70);
+//       $body.appendChild($elem);
+//   };
+// };
 
 dataDB.install('',{v: 1,name: 'd2ViTG9nZ2luZwog',dbData: { webLogging: '' }})
 
@@ -361,5 +361,5 @@ function initialization(){
   input_2_endTime.value = timeFormat(time+3600000*24);
   window.web_logging.loggingList(input_1_startTime.value,input_2_endTime.value,webLogging_logName_select.value);
   window.web_logging.webLogging_logName_select_value = 'all';
-  happy();
+  // happy();
 }
